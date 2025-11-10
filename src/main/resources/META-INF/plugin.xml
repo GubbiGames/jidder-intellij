@@ -1,0 +1,18 @@
+<idea-plugin>
+    <id>com.jidder.lang</id>
+    <name>Jidder Support</name>
+    <vendor email="support@example.com" url="https://example.com">Jidder</vendor>
+
+    <description><![CDATA[
+        Provides syntax highlighting for Jidder (<code>.jdr</code>) files using the bundled TextMate grammar.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.intellij.plugins.textmate</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Jidder" language="Jidder" implementationClass="com.jidder.lang.JidderFileType" fieldName="INSTANCE" extensions="jdr" />
+        <lang.syntaxHighlighterFactory language="Jidder" implementationClass="com.jidder.lang.JidderSyntaxHighlighterFactory" />
+        <textMateBundle fileName="bundles/Jidder.tmBundle" />
+    </extensions>
+</idea-plugin>
