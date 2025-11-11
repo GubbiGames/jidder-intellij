@@ -1,10 +1,11 @@
 <idea-plugin>
-    <id>com.jidder.lang</id>
-    <name>Jidder Support</name>
-    <vendor email="support@example.com" url="https://example.com">Jidder</vendor>
+    <id>dev.jidder.lang</id>
+    <name>Jidder Language Support</name>
+
+    <vendor email="contact@gubbigames.com">Gubbi Games</vendor>
 
     <description><![CDATA[
-        Provides syntax highlighting for Jidder (<code>.jdr</code>) files using the bundled TextMate grammar.
+        Provides syntax highlighting for Jidder (<code>.jdr</code>) files, the language used in the Jidder Dialogue System.
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
