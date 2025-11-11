@@ -1,10 +1,12 @@
+import org.jetbrains.changelog.Changelog
+import org.jetbrains.changelog.markdownToHTML
+import org.jetbrains.intellij.platform.gradle.TestFrameworkType
+
 plugins {
     id("java") // Java support
     alias(libs.plugins.kotlin) // Kotlin support
     alias(libs.plugins.intelliJPlatform) // IntelliJ Platform Gradle Plugin
     alias(libs.plugins.changelog) // Gradle Changelog Plugin
-    alias(libs.plugins.qodana) // Gradle Qodana Plugin
-    alias(libs.plugins.kover) // Gradle Kover Plugin
 }
 
 group = providers.gradleProperty("pluginGroup").get()
@@ -29,12 +31,6 @@ repositories {
     intellijPlatform {
         defaultRepositories()
     }
-}
-
-intellij {
-    version.set("2023.3")
-    type.set("IC")
-    plugins.set(listOf("org.intellij.plugins.textmate"))
 }
 
 // Dependencies are managed with Gradle version catalog - read more: https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
@@ -121,17 +117,6 @@ intellijPlatform {
 changelog {
     groups.empty()
     repositoryUrl = providers.gradleProperty("pluginRepositoryUrl")
-}
-
-// Configure Gradle Kover Plugin - read more: https://github.com/Kotlin/kotlinx-kover#configuration
-kover {
-    reports {
-        total {
-            xml {
-                onCheck = true
-            }
-        }
-    }
 }
 
 tasks {
