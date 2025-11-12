@@ -30,7 +30,7 @@
             "2": {
               "patterns": [
                 {
-                  "match": "\\\b[A-Za-z_][A-Za-z0-9_]*\\\b",
+                  "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
                   "name": "variable.other.constant.jidder"
                 },
                 {
@@ -201,15 +201,15 @@
         },
         {
           "name": "keyword.control.conditional.jidder",
-          "match": "\\\b(if|else)\\\b"
+          "match": "\\b(if|else)\\b"
         },
         {
           "name": "keyword.operator.word.jidder",
-          "match": "\\\b(and|or)\\\b"
+          "match": "\\b(and|or)\\b"
         },
         {
           "name": "constant.language.jidder",
-          "match": "\\\b(true|false|null)\\\b"
+          "match": "\\b(true|false|null)\\b"
         },
         {
           "name": "keyword.operator.assignment.jidder",
@@ -229,7 +229,7 @@
         },
         {
           "name": "variable.other.readwrite.jidder",
-          "match": "\\\b[A-Za-z_][A-Za-z0-9_]*\\\b"
+          "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
         }
       ]
     },
@@ -260,7 +260,7 @@
     },
     "number": {
       "name": "constant.numeric.decimal.jidder",
-      "match": "\\\b\\d+(\\.\\d+)?\\\b"
+      "match": "\\b\\d+(\\.\\d+)?\\b"
     }
   }
 }
