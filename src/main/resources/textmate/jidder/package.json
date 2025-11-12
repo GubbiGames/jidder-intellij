@@ -1,0 +1,33 @@
+{
+  "name": "jidder",
+  "displayName": "Jidder Language Support",
+  "description": "TextMate bundle for Jidder language support",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "jidder",
+      "aliases": ["Jidder", "jidder"],
+      "extensions": [".jdr"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "jidder",
+      "scopeName": "source.jidder",
+      "path": "./syntaxes/Jidder.tmLanguage.json"
+    }],
+    "configurationDefaults": {
+      "[jidder]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.indentSize": 2,
+        "editor.detectIndentation": false
+      }
+    }
+  }
+}

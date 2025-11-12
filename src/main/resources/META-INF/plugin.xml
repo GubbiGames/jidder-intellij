@@ -9,11 +9,13 @@
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>
-    <depends>org.intellij.plugins.textmate</depends>
+    <depends>org.jetbrains.plugins.textmate</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <fileType name="Jidder" language="Jidder" implementationClass="com.jidder.lang.JidderFileType" fieldName="INSTANCE" extensions="jdr" />
         <lang.syntaxHighlighterFactory language="Jidder" implementationClass="com.jidder.lang.JidderSyntaxHighlighterFactory" />
-        <textMateBundle fileName="bundles/Jidder.tmBundle" />
+
+        <textmate.bundleProvider implementation="com.jidder.textmate.JidderTextMateBundleProvider" />
     </extensions>
+
 </idea-plugin>
