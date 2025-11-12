@@ -13,7 +13,16 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <fileType name="Jidder" language="Jidder" implementationClass="com.jidder.lang.JidderFileType" fieldName="INSTANCE" extensions="jdr" />
-        <lang.syntaxHighlighterFactory language="Jidder" implementationClass="com.jidder.lang.JidderSyntaxHighlighterFactory" />
+
+      <editorHighlighterProvider
+        filetype="Jidder"
+        implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateEditorHighlighterProvider"
+      />
+
+      <lang.syntaxHighlighterFactory
+        language="Jidder"
+        implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateSyntaxHighlighterFactory"
+      />
 
         <textmate.bundleProvider implementation="com.jidder.textmate.JidderTextMateBundleProvider" />
     </extensions>

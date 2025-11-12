@@ -1,6 +1,7 @@
 package com.jidder.lang
 
 import com.intellij.openapi.fileTypes.LanguageFileType
+import com.jidder.icons.JidderIcons
 
 object JidderFileType : LanguageFileType(JidderLanguage.INSTANCE) {
     override fun getName(): String = "Jidder"
@@ -9,5 +10,5 @@ object JidderFileType : LanguageFileType(JidderLanguage.INSTANCE) {
 
     override fun getDefaultExtension(): String = "jdr"
 
-    override fun getIcon() = null
+    override fun getIcon() = JidderIcons.Jidder
 }
