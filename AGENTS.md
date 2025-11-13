@@ -1,33 +1,31 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `src/main/java/com/jidder` contains the IntelliJ language integration (file type, language, highlighters).
-- `src/main/resources/META-INF/plugin.xml` registers components; keep auxiliary assets (TextMate bundles, icons) beside `src/main/resources/bundles`.
-- Gradle logic lives in `build.gradle.kts`, with release metadata in `gradle.properties` and CI/static analysis configs in `qodana.yml` and `codecov.yml`.
-- Generated artifacts land in `build/`; do not edit or commit anything under that directory.
+- `src/main/kotlin/com/jidder` hosts the Kotlin sources for language definitions, TextMate bundle wiring, and icons.
+- `src/main/resources/META-INF/plugin.xml` registers the file type, TextMate highlighter, and bundle provider; keep related resources under `src/main/resources`.
+- TextMate assets (grammar, language configuration, package metadata) live under `src/main/resources/textmate/jidder/**` and are consumed by `JidderTextMateBundleProvider`.
+- Shared icons, including `pluginIcon.svg`, live under `src/main/resources/icons`.
+- Build logic is in `build.gradle.kts`, `settings.gradle.kts`, and `gradle.properties`. Keep `pluginSinceBuild` (243) aligned with the IntelliJ 2024.3 baseline and sync `pluginVersion` with `CHANGELOG.md`.
+- The GitHub Actions workflow at `.github/workflows/build.yml` runs `buildPlugin` and `verifyPlugin`. Generated artifacts land in `build/`; never edit or commit files in that directory.
 
 ## Build, Test, and Development Commands
-- `./gradlew build` compiles sources, runs checks, and assembles the distributable ZIP.
-- `./gradlew runIde` starts a sandboxed IntelliJ IDEA 2023.3 with the plugin installed for manual verification.
-- `./gradlew verifyPlugin` runs the JetBrains Plugin Verifier against the configured `platformVersion` matrix.
-- `./gradlew qodanaScan` (or the IDE Qodana run configuration) executes static analysis defined in `qodana.yml`.
-- `./gradlew publishPlugin` signs and uploads; reserve it for release automation after secrets are configured.
+- `./gradlew buildPlugin` compiles sources, runs tests, and assembles the distributable ZIP (this is what CI calls).
+- `./gradlew test` executes unit/integration tests; include it in local verification before opening a PR.
+- `./gradlew runIde` launches a sandboxed IntelliJ IDEA IC 2024.3.6 configured via `gradle.properties` for manual verification.
+- `./gradlew verifyPlugin` runs the JetBrains Plugin Verifier against the recommended IDE set declared in `build.gradle.kts`.
+- `./gradlew publishPlugin` signs and uploads the plugin; reserve it for release automation once secrets are configured.
+- `./gradlew wrapper --gradle-version <x>` should be the only way to bump Gradle; avoid editing `gradlew*` scripts manually.
 
 ## Coding Style & Naming Conventions
-- Follow JetBrains defaults: 4-space indentation, braces on new lines for Java, and `PascalCase` types such as `JidderSyntaxHighlighterFactory`.
-- Use `camelCase` members/methods and `UPPER_SNAKE_CASE` constants; keep packages under `com.jidder.*`.
-- Place related resources next to their code (for example TextMate grammars under `src/main/resources/bundles`) and run IDE formatting before committing.
-
-## Testing Guidelines
-- Locate unit and platform tests in `src/test/java` (or `.../kotlin`) using JUnit plus the IntelliJ Platform test framework; suffix files with `*Test`.
-- Prefer focused tests that cover PSI helpers, lexer rules, and syntax-highlighting flows; extend `PlatformTestCase` when IDE fixtures are required.
-- Run `./gradlew test` locally and refresh coverage with `./gradlew koverHtmlReport` so Kover and Codecov stay green.
+- Kotlin is the primary language; follow JetBrains defaults (4-space indentation, braces on new lines when multi-line) and keep packages under `com.jidder.*`.
+- Use `PascalCase` for types/objects (e.g., `JidderTextMateBundleProvider`), `camelCase` for members/methods, and `UPPER_SNAKE_CASE` for constants.
+- Co-locate resources with their code (e.g., TextMate grammars under `src/main/resources/textmate/jidder`, icons under `src/main/resources/icons`) and run IDE formatting before committing.
 
 ## Commit & Pull Request Guidelines
-- Write imperative, scope-first commit messages similar to `Add Jidder TextMate syntax highlighting plugin`; reference issues in the body (`Refs #12`).
-- Keep one logical change per commit. PRs should include a clear summary, verification notes (`./gradlew test`, `./gradlew runIde`), and screenshots/gifs for UI changes.
-- Wait for CI (build, Qodana, Codecov) to finish before requesting review, and update `CHANGELOG.md` when behavior changes.
+- Write imperative, scope-first commit messages like `Add TextMate grammar for choices`, referencing issues in the body (`Refs #12`) when applicable.
+- Keep one logical change per commit. PRs should summarize behavior changes, list verification commands (`./gradlew buildPlugin`, `./gradlew test`, `./gradlew runIde`), and include screenshots/gifs for UI updates.
+- Wait for the GitHub Actions `Build` workflow (build + verify jobs) to finish before requesting review, and update `CHANGELOG.md` whenever behavior changes.
 
 ## Security & Configuration Tips
-- Never commit secrets. Publishing and signing rely on `CERTIFICATE_CHAIN`, `PRIVATE_KEY`, `PRIVATE_KEY_PASSWORD`, and `PUBLISH_TOKEN` environment variables.
-- When adjusting `gradle.properties`, keep `pluginSinceBuild` aligned with the IDEA baseline and ensure `pluginVersion` plus `CHANGELOG.md` stay in sync.
+- Never commit secrets. Publishing and signing rely on the `CERTIFICATE_CHAIN`, `PRIVATE_KEY`, `PRIVATE_KEY_PASSWORD`, and `PUBLISH_TOKEN` environment variables.
+- When editing `gradle.properties`, ensure `platformType`, `platformVersion`, `pluginSinceBuild`, and `pluginVersion` stay aligned with the intended IntelliJ baseline and the release notes.
