@@ -8,8 +8,8 @@
   "patterns": [
     {
       "comment": "Header Section",
-      "begin": "\\A",
-      "end": "^--.*",
+      "begin": "^--.*$",
+      "end": "^--.*$",
       "endCaptures": {
         "0": {
           "name": "punctuation.separator.jidder"
