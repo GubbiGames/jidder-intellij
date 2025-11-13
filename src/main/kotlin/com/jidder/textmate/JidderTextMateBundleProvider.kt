@@ -17,7 +17,6 @@ class JidderTextMateBundleProvider : TextMateBundleProvider {
 
             for (fileToCopy in listOf(
                 "package.json",
-                "language-configuration.json",
                 "syntaxes/Jidder.tmLanguage.json"
             )) {
                 val resource: URL = classLoader.getResource("textmate/jidder/$fileToCopy")!!
