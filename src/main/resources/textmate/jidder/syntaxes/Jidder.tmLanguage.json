@@ -73,6 +73,18 @@
       ]
     },
     {
+      "comment": "Line identifier at end of line",
+      "match": "(#)([0-9A-Za-z]+)\\s*$",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.id.jidder"
+        },
+        "2": {
+          "name": "constant.other.id.jidder"
+        }
+      }
+    },
+    {
       "comment": "Illegally indented line (matches whole line)",
       "match": "^(((  )* )(?=\\S)(?!//).*)",
       "captures": {
