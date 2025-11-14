@@ -1,7 +1,7 @@
 {
   "name": "jidder",
-  "displayName": "Jidder Language Support",
-  "description": "TextMate bundle for Jidder language support",
+  "displayName": "Jidder",
+  "description": "Adds support for the Jidder dialogue language.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.101.0"

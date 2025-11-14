@@ -1,4 +1,4 @@
-package com.jidder.icons
+package no.gubbi.jidder.icons
 
 import com.intellij.openapi.util.IconLoader
 

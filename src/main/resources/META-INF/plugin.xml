@@ -1,18 +1,18 @@
 <idea-plugin>
-  <id>dev.jidder.lang</id>
-  <name>Jidder Language Support</name>
+  <id>no.gubbi.jidder</id>
+  <name>Jidder</name>
 
   <vendor email="contact@gubbigames.com">Gubbi Games</vendor>
 
   <description><![CDATA[
-        Provides syntax highlighting for Jidder (<code>.jdr</code>) files, the language used in the Jidder Dialogue System.
+        Adds support for the Jidder dialogue language.
     ]]></description>
 
   <depends>com.intellij.modules.platform</depends>
   <depends>org.jetbrains.plugins.textmate</depends>
 
   <extensions defaultExtensionNs="com.intellij">
-    <fileType name="Jidder" language="Jidder" implementationClass="com.jidder.lang.JidderFileType" fieldName="INSTANCE"
+    <fileType name="Jidder" language="Jidder" implementationClass="no.gubbi.jidder.lang.JidderFileType" fieldName="INSTANCE"
               extensions="jdr"/>
 
     <editorHighlighterProvider
@@ -23,9 +23,9 @@
       language="Jidder"
       implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateSyntaxHighlighterFactory"/>
 
-    <textmate.bundleProvider implementation="com.jidder.textmate.JidderTextMateBundleProvider"/>
+    <textmate.bundleProvider implementation="no.gubbi.jidder.textmate.JidderTextMateBundleProvider"/>
 
-    <langCodeStyleSettingsProvider implementation="com.jidder.lang.JidderLanguageCodeStyleSettingsProvider"/>
+    <langCodeStyleSettingsProvider implementation="no.gubbi.jidder.lang.JidderLanguageCodeStyleSettingsProvider"/>
 
   </extensions>
 

@@ -1,7 +1,7 @@
-package com.jidder.lang
+package no.gubbi.jidder.lang
 
 import com.intellij.openapi.fileTypes.LanguageFileType
-import com.jidder.icons.JidderIcons
+import no.gubbi.jidder.icons.JidderIcons
 
 object JidderFileType : LanguageFileType(JidderLanguage.INSTANCE) {
     override fun getName(): String = "Jidder"

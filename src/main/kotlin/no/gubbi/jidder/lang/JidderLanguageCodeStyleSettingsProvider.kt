@@ -1,4 +1,4 @@
-﻿package com.jidder.lang
+﻿package no.gubbi.jidder.lang
 
 import com.intellij.lang.Language
 import com.intellij.psi.codeStyle.CommonCodeStyleSettings

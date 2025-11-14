@@ -1,4 +1,4 @@
-package com.jidder.textmate
+package no.gubbi.jidder.textmate
 
 import com.intellij.openapi.application.PathManager
 import org.jetbrains.plugins.textmate.api.TextMateBundleProvider
