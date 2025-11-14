@@ -1,33 +1,32 @@
 <idea-plugin>
-    <id>dev.jidder.lang</id>
-    <name>Jidder Language Support</name>
+  <id>dev.jidder.lang</id>
+  <name>Jidder Language Support</name>
 
-    <vendor email="contact@gubbigames.com">Gubbi Games</vendor>
+  <vendor email="contact@gubbigames.com">Gubbi Games</vendor>
 
-    <description><![CDATA[
+  <description><![CDATA[
         Provides syntax highlighting for Jidder (<code>.jdr</code>) files, the language used in the Jidder Dialogue System.
     ]]></description>
 
-    <depends>com.intellij.modules.platform</depends>
-    <depends>org.jetbrains.plugins.textmate</depends>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>org.jetbrains.plugins.textmate</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <fileType name="Jidder" language="Jidder" implementationClass="com.jidder.lang.JidderFileType" fieldName="INSTANCE" extensions="jdr" />
+  <extensions defaultExtensionNs="com.intellij">
+    <fileType name="Jidder" language="Jidder" implementationClass="com.jidder.lang.JidderFileType" fieldName="INSTANCE"
+              extensions="jdr"/>
 
-      <editorHighlighterProvider
-        filetype="Jidder"
-        implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateEditorHighlighterProvider"
-      />
+    <editorHighlighterProvider
+      filetype="Jidder"
+      implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateEditorHighlighterProvider"/>
 
-      <lang.syntaxHighlighterFactory
-        language="Jidder"
-        implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateSyntaxHighlighterFactory"
-      />
+    <lang.syntaxHighlighterFactory
+      language="Jidder"
+      implementationClass="org.jetbrains.plugins.textmate.language.syntax.highlighting.TextMateSyntaxHighlighterFactory"/>
 
-        <textmate.bundleProvider implementation="com.jidder.textmate.JidderTextMateBundleProvider" />
+    <textmate.bundleProvider implementation="com.jidder.textmate.JidderTextMateBundleProvider"/>
 
-        <langCodeStyleSettingsProvider implementation="com.jidder.lang.JidderLanguageCodeStyleSettingsProvider"/>
+    <langCodeStyleSettingsProvider implementation="com.jidder.lang.JidderLanguageCodeStyleSettingsProvider"/>
 
-    </extensions>
+  </extensions>
 
 </idea-plugin>
