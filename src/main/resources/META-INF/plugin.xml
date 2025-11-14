@@ -25,6 +25,9 @@
       />
 
         <textmate.bundleProvider implementation="com.jidder.textmate.JidderTextMateBundleProvider" />
+
+        <langCodeStyleSettingsProvider implementation="com.jidder.lang.JidderLanguageCodeStyleSettingsProvider"/>
+
     </extensions>
 
 </idea-plugin>
