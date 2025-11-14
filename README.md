@@ -1,4 +1,4 @@
-# Jidder Language Plugin 
+# Jidder Language Intellij Plugin 
 
 ![Build](https://github.com/rikard-swahn/intellij-plugin/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
