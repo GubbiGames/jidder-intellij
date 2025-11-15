@@ -85,15 +85,6 @@
       }
     },
     {
-      "comment": "Illegally indented line (matches whole line)",
-      "match": "^(((  )* )(?=\\S)(?!//).*)",
-      "captures": {
-        "1": {
-          "name": "invalid.illegal.indent.jidder"
-        }
-      }
-    },
-    {
       "comment": "Auto-choice marker + Party Name + Random + Label",
       "match": "^\\s*(>)?\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(?:(\\*)(\\d*)?)?(?:\\s*\\[\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*\\])?\\s*:",
       "captures": {
