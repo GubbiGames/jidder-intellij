@@ -7,6 +7,92 @@
 
   "patterns": [
     {
+      "comment": "Regular String",
+      "include": "#string"
+    },
+    {
+      "comment": "Line identifier at end of line",
+      "match": "(#)([0-9A-Za-z]+)\\s*$",
+      "captures": {
+        "1": {
+          "name": "punctuation.definition.id.jidder"
+        },
+        "2": {
+          "name": "constant.other.id.jidder"
+        }
+      }
+    },
+    {
+      "comment": "Function-style dialogue with arguments",
+      "name": "meta.dialogue.function-call.jidder",
+      "begin": "\\(\\s*(?=\")",
+      "end": "\\)|(?=\\n)",
+      "patterns": [
+        {
+          "include": "#string"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.comma.jidder"
+        },
+        {
+          "include": "#script-body"
+        }
+      ]
+    },
+    {
+      "comment": "Auto-choice marker + Party Name + Random + Label",
+      "match": "^\\s*(>)?\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(?:(\\*)(\\d*)?)?(?:\\s*\\[\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*\\])?\\s*:",
+      "captures": {
+        "1": {
+          "name": "keyword.control.flow.jidder"
+        },
+        "2": {
+          "name": "variable.other.constant.jidder"
+        },
+        "3": {
+          "name": "keyword.operator.random.jidder"
+        },
+        "4": {
+          "name": "constant.numeric.decimal.jidder"
+        },
+        "5": {
+          "name": "entity.name.label.jidder"
+        }
+      }
+    },
+    {
+      "comment": "Script Blocks",
+      "include": "#script-block"
+    },
+    {
+      "comment": "Goto children",
+      "match": "(-->)\\s*([A-Za-z_][A-Za-z0-9_]*)?",
+      "captures": {
+        "1": {
+          "name": "keyword.control.flow.goto.jidder"
+        },
+        "2": {
+          "name": "entity.name.label.target.jidder"
+        }
+      }
+    },
+    {
+      "comment": "Goto",
+      "match": "(->)\\s*([A-Za-z_][A-Za-z0-9_]*)?",
+      "captures": {
+        "1": {
+          "name": "keyword.control.flow.goto.jidder"
+        },
+        "2": {
+          "name": "entity.name.label.target.jidder"
+        }
+      }
+    },
+    {
+      "include": "#line-comment"
+    },
+    {
       "comment": "Header Section",
       "begin": "^---+",
       "beginCaptures": {
@@ -47,93 +133,8 @@
           }
         }
       ]
-    },
-    {
-      "include": "#line-comment"
-    },
-    {
-      "comment": "Script Blocks",
-      "include": "#script-block"
-    },
-    {
-      "comment": "Regular String",
-      "include": "#string"
-    },
-    {
-      "comment": "Function-style dialogue with arguments",
-      "name": "meta.dialogue.function-call.jidder",
-      "begin": "\\(\\s*(?=\")",
-      "end": "\\)|(?=\\n)",
-      "patterns": [
-        {
-          "include": "#string"
-        },
-        {
-          "match": ",",
-          "name": "punctuation.separator.comma.jidder"
-        },
-        {
-          "include": "#script-body"
-        }
-      ]
-    },
-    {
-      "comment": "Line identifier at end of line",
-      "match": "(#)([0-9A-Za-z]+)\\s*$",
-      "captures": {
-        "1": {
-          "name": "punctuation.definition.id.jidder"
-        },
-        "2": {
-          "name": "constant.other.id.jidder"
-        }
-      }
-    },
-    {
-      "comment": "Auto-choice marker + Party Name + Random + Label",
-      "match": "^\\s*(>)?\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(?:(\\*)(\\d*)?)?(?:\\s*\\[\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*\\])?\\s*:",
-      "captures": {
-        "1": {
-          "name": "keyword.control.flow.jidder"
-        },
-        "2": {
-          "name": "variable.other.constant.jidder"
-        },
-        "3": {
-          "name": "keyword.operator.random.jidder"
-        },
-        "4": {
-          "name": "constant.numeric.decimal.jidder"
-        },
-        "5": {
-          "name": "entity.name.label.jidder"
-        }
-      }
-    },
-    {
-      "comment": "Goto children",
-      "match": "(-->)\\s*([A-Za-z_][A-Za-z0-9_]*)?",
-      "captures": {
-        "1": {
-          "name": "keyword.control.flow.goto.jidder"
-        },
-        "2": {
-          "name": "entity.name.label.target.jidder"
-        }
-      }
-    },
-    {
-      "comment": "Goto",
-      "match": "(->)\\s*([A-Za-z_][A-Za-z0-9_]*)?",
-      "captures": {
-        "1": {
-          "name": "keyword.control.flow.goto.jidder"
-        },
-        "2": {
-          "name": "entity.name.label.target.jidder"
-        }
-      }
     }
+
   ],
   "repository": {
     "line-comment": {
