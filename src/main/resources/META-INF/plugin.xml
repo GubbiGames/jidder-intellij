@@ -1,8 +1,10 @@
-<idea-plugin>
+<idea-plugin url="https://www.jidder.dev">
   <id>no.gubbi.jidder</id>
   <name>Jidder</name>
 
-  <vendor email="contact@gubbigames.com">Gubbi Games</vendor>
+  <vendor url="https://www.gubbigames.com/" email="contact@gubbigames.com">Gubbi Games</vendor>
+
+
 
   <description><![CDATA[
         Adds support for the Jidder dialogue language.
