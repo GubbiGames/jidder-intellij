@@ -1,4 +1,4 @@
-# Jidder Language Intellij Plugin 
+# Jidder Plugin for JetBrains IDEs
 
 ![Build](https://github.com/rikard-swahn/intellij-plugin/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
@@ -13,27 +13,20 @@
 - [ ] Configure the [CODECOV_TOKEN](https://docs.codecov.com/docs/quick-start) secret for automated test coverage reports on PRs
 
 <!-- Plugin description -->
-Adds support for the Jidder dialogue language.
-
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
-
+Adds support for the [Jidder dialogue language](https://www.jidder.dev).
 <!-- Plugin description end -->
 
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+Adds syntax highlighting for Jidder dialogue files (`.jdr`).
 
+< screenshots of your extension in action. Image paths are relative to this README file. >
 For example if there is an image subfolder under your extension project workspace:
-
 \!\[feature X\]\(images/feature-x.png\)
-
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-## Release Notes
 
-### 1.0.0
 
-Initial release of Jidder
 
 
