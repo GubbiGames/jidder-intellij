@@ -19,12 +19,15 @@ Adds support for the [Jidder dialogue language](https://www.jidder.dev).
 
 ## Features
 
-Adds syntax highlighting for Jidder dialogue files (`.jdr`).
 
-< screenshots of your extension in action. Image paths are relative to this README file. >
-For example if there is an image subfolder under your extension project workspace:
-\!\[feature X\]\(images/feature-x.png\)
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### Syntax Highlighting
+Your Jidder dialogue files (`.jdr`) will be syntax highlighted for better readability.
+
+< add gif showing highlighting >
+
+for example if there is an image subfolder under your extension project workspace:
+[feature X](images/feature-x.png)
+
 
 
 
