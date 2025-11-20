@@ -1,8 +1,8 @@
 # Jidder Plugin for JetBrains IDEs
 
 ![Build](https://github.com/rikard-swahn/intellij-plugin/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
+[![Version](https://img.shields.io/jetbrains/plugin/v/no.gubbi.jidder.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/no.gubbi.jidder.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 
 ## Template ToDo list
 - [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
