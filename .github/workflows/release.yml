@@ -73,7 +73,6 @@ jobs:
 
       # Create a pull request
       - name: Create Pull Request
-        if: ${{ steps.properties.outputs.changelog != '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
