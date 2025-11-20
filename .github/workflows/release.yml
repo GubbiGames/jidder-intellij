@@ -73,6 +73,7 @@ jobs:
 
       # Create a pull request
       - name: Create Pull Request
+        if: ${{ github.event.release.body != '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
