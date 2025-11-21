@@ -1,6 +1,6 @@
 # Jidder Plugin for JetBrains IDEs
 
-![Build](https://github.com/rikard-swahn/intellij-plugin/workflows/Build/badge.svg)
+![Build](https://github.com/GubbiGames/jidder-intellij/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/no.gubbi.jidder.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/no.gubbi.jidder.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
 
