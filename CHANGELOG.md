@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+- Code moved to https://github.com/GubbiGames/jidder-intellij
+- Version prefix "v" removed.
+
+
 ## [0.0.4] - 2025-11-20
 
 ### Added
