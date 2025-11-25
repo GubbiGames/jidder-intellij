@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.6] - 2025-11-25
+
 ### Added
 
 - Syntax highlighting for Jidder dialogue language.
 
+[Unreleased]: https://github.com/GubbiGames/jidder-intellij/compare/0.0.6...HEAD
+[0.0.6]: https://github.com/GubbiGames/jidder-intellij/commits/0.0.6
