@@ -1,0 +1,10 @@
+[versions]
+changelog = "2.4.0"
+intelliJPlatform = "2.10.4"
+kotlin = "2.2.21"
+
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+intelliJPlatform = { id = "org.jetbrains.intellij.platform", version.ref = "intelliJPlatform" }
+changelog = { id = "org.jetbrains.changelog", version.ref = "changelog" }
