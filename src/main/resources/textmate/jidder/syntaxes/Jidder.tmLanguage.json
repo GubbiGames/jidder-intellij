@@ -11,14 +11,23 @@
       "include": "#string"
     },
     {
-      "comment": "Line identifier at end of line",
-      "match": "(#)([0-9A-Za-z]+)\\s*$",
+      "comment": "Attribute [key:val] or [key]",
+      "match": "(\\[)((?:\\\\.|[^\\]:])*)(?:(:)((?:\\\\.|[^\\]])*))?(\\])",
       "captures": {
         "1": {
-          "name": "punctuation.definition.id.jidder"
+          "name": "punctuation.definition.begin.jidder"
         },
         "2": {
-          "name": "constant.other.id.jidder"
+          "name": "entity.name.attribute.jidder"
+        },
+        "3": {
+          "name": "punctuation.separator.jidder"
+        },
+        "4": {
+          "name": "string.unquoted.attribute-value.jidder"
+        },
+        "5": {
+          "name": "punctuation.definition.end.jidder"
         }
       }
     },
@@ -42,7 +51,7 @@
     },
     {
       "comment": "Auto-choice marker + Party Name + Random + Label",
-      "match": "^\\s*(>)?\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(?:(\\*)(\\d*)?)?(?:\\s*\\[\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*\\])?\\s*:",
+      "match": "^\\s*(>)?\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(?:(\\*)(\\d*)?)?\\s*:",
       "captures": {
         "1": {
           "name": "keyword.control.flow.jidder"
@@ -55,9 +64,6 @@
         },
         "4": {
           "name": "constant.numeric.decimal.jidder"
-        },
-        "5": {
-          "name": "entity.name.label.jidder"
         }
       }
     },
