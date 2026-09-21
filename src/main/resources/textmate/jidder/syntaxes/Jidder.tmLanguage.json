@@ -50,20 +50,14 @@
       ]
     },
     {
-      "comment": "Auto-choice marker + Party Name + Random + Label",
-      "match": "^\\s*(>)?\\s*([A-Za-z_][A-Za-z0-9_]*)\\s*(?:(\\*)(\\d*)?)?\\s*:",
+      "comment": "Node type + Party Name",
+      "match": "^\\s*(>|>>|\\*\\d*)?\\s*((?:\\\\.|[^{}\\[\\]()\"?:*>0-9\\s-])(?:\\\\.|[^{}\\[\\]()\"?:*>-])*)",
       "captures": {
         "1": {
           "name": "keyword.control.flow.jidder"
         },
         "2": {
           "name": "variable.other.constant.jidder"
-        },
-        "3": {
-          "name": "keyword.operator.random.jidder"
-        },
-        "4": {
-          "name": "constant.numeric.decimal.jidder"
         }
       }
     },
