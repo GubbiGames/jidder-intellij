@@ -112,27 +112,6 @@
           "include": "#line-comment"
         },
         {
-          "comment": "PlayerParty entry",
-          "match": "^\\s*(PlayerParty)\\s*:([^/]*)",
-          "captures": {
-            "1": {
-              "name": "constant.language.jidder"
-            },
-            "2": {
-              "patterns": [
-                {
-                  "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b",
-                  "name": "variable.other.constant.jidder"
-                },
-                {
-                  "match": ",",
-                  "name": "punctuation.separator.comma.jidder"
-                }
-              ]
-            }
-          }
-        },
-        {
           "comment": "Locale entry",
           "match": "^\\s*(Locale)\\s*:([^/]*)",
           "captures": {
